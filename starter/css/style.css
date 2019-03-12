@@ -108,6 +108,17 @@ body {
     }
 }
 
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* pseudo classes are special states of a selector. Pseudo classed are used to style elements under special conditions */
 /* there are link, visited states */
 .btn:link,
@@ -120,6 +131,7 @@ body {
     /* *all properties are enabled to be animated */
     /* transition property has to be in initial state */
     transition: all 0.2s;
+    position: relative;
 }
 
 .btn-white {
@@ -129,9 +141,40 @@ body {
 
 .btn:hover {
     transform: translateY(-3px);
+    /* 1st value x direction, 2nd value y (apsolon) direction, 3rd value blur */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* -1px from initial "link" state, not hover state */
 .btn:active {
     transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* animation-fill-mode with backwards applies opacity: 0; transform: translateY(30px); before animation starts so button is not visible initially */
+    animation-fill-mode: backwards;
 }
