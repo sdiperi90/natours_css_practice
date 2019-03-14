@@ -1,0 +1,12 @@
+// when all of the childs of an element are floated (right, or left)
+// the height colapses and becomes zero.
+// We can use clearfix to fix that.
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        // display: table; is the standard version of clearfix
+        display: table;
+        clear: both;
+    }
+}

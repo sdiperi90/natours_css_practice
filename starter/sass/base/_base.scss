@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /* setting box-sizing property on each element on the entire page to inherit */
+    box-sizing: inherit;
+}
+
+html {
+    /* (10/16=0.625  10 pixels what we want, and 16 pixels is browser default size */
+    // This defines what 1rem is
+    font-size: 62.5%;
+}
+
+body {
+    /* box-sizing this will be inherited to all elements */
+    box-sizing: border-box;
+}
