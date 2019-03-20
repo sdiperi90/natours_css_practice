@@ -24,6 +24,15 @@
         }
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
     &:hover {
         transform: translateY(-3px);
         /* 1st value x direction, 2nd value y (apsolon) direction, 3rd value blur */
