@@ -1,0 +1,19 @@
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    // we cant make opacity in percentage otherwise it will change the opacity of all elements
+    opacity: 0.15;
+    overflow: hidden;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        // object-fit: cover is similar to background size cover,
+        // it covers the entire parent while maintaining its aspect ratio
+        object-fit: cover;
+    }
+}

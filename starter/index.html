@@ -222,6 +222,15 @@
                    
             </section>
             <section class="section-stories">
+                <div class="bg-video">
+                    <video class="bg-video__content" autoplay muted loop>
+                        <!-- we use mp4 and webm format to make sure it works accross all browsers -->
+                        <source src="img/video.mp4" type="video/mp4">
+                        <source src="img/video.webm" type="video/webm" 
+                        <!-- If none of these can be played by browser this text here will appear -->
+                        Your  browser is not supported
+                    </video>
+                </div>
                 <div class="u-center-text u-margin-bottom-big">
                     <h2 class="heading-secondary">
                         We make people genuinely happy
@@ -229,12 +238,12 @@
                 </div>
                 <div class="row">
                     <div class="story">
-
-<!-- using figure element because it's semantically the best thing to do because we will have an image together with a caption
-and so we have the image and then a caption this Mary Smith name here is the caption, and so in HTML five we have
-this figure element where we can put an image and then some caption, with a figcaption element. -->
+                        <!-- using figure element because it's semantically the best thing to do because we will have an image together with a caption
+                        and so we have the image and then a caption this Mary Smith name here is the caption, and so in HTML five we have
+                        this figure element where we can put an image and then some caption, with a figcaption element. -->
                         <figure class="story__shape">
-                            <img src="img/nat-8.jpg" alt="Person on a tour" class="story__image">
+                            <img src="img/nat-8.jpg" alt="Person on a tour" class="story__img">
+                            <figcaption class="story__caption">Mary Smith</figcaption>
                         </figure>
                         <div class="story__text">
                             <h3 class="heading-tertiary u-margin-bottom-small">I had the best week ever with my family</h3>
@@ -244,6 +253,23 @@ this figure element where we can put an image and then some caption, with a figc
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                        <div class="story">
+                            <figure class="story__shape">
+                                <img src="img/nat-9.jpg" alt="Person on a tour" class="story__img">
+                                <figcaption class="story__caption">Jack Wilson</figcaption>
+                            </figure>
+                            <div class="story__text">
+                                <h3 class="heading-tertiary u-margin-bottom-small">Wow! My life is completely different now</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque delectus suscipit, ab totam officiis et pariatur! Nulla placeat nisi, sequi maiores aliquam inventore odio dolorum! Aliquid magnam deserunt voluptas corporis. Nulla placeat nisi, sequi maiores aliquam inventore odio dolorum! Aliquid magnam?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="u-center-text u-margin-bottom-huge">
+                        <a href="#" class="btn-text u-margin-top-big">Read all stories &#x2192</a>
+                    </div>
             </section>
         </main>
 
