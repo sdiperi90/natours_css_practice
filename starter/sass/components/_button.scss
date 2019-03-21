@@ -1,6 +1,8 @@
 /* pseudo classes are special states of a selector. Pseudo classed are used to style elements under special conditions */
 /* there are link, visited states */
 .btn {
+    // & to apply the style to button as well
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -13,6 +15,10 @@
         transition: all 0.2s;
         position: relative;
         font-size: $default-font-size;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
 
     &--white {
@@ -45,7 +51,9 @@
     }
 
     /* -1px from initial "link" state, not hover state */
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-1px);
         box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
     }
