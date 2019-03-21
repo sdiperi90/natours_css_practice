@@ -1,0 +1,60 @@
+.form {
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        background-color: red;
+        font-size: 1.5rem;
+
+        // all alements automatically inherit styles from parents,
+        // but not input, that's why we need to set necessary properties to inherit
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, 0.5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display: block;
+
+        // focus pseudo element takes effect when input element is clicked
+        // outline: none removes blue border around the inut element
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        // when the input is clicked/focused the invalid input is entered
+        // the below pseudo class takes effect
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: 0.7rem;
+        display: block;
+    }
+
+    // + adjacent sibling element that come next after
+    // ~ sibling element doesn't have to come right after
+
+    // when there is nothinh written inside the input
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        // If we just set the opacity to zero, then the element will basically still be on the page,
+        // but only invisible, but if we set it to visibility hidden as well, then it's really gone.
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+}
