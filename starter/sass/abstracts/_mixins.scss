@@ -17,3 +17,55 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+///Media Query Manager
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800]   is where our normal styles apply
+1800px + :      Big desktop
+
+
+*/
+
+/*
+one rem or one em in a media query is always just equal to the font size
+which is coming from the browser, and that's by default 16 pixels
+
+We're going to use ems and not rems, because rems fail to work as intended 
+in some of the browsers.
+
+1em = 16px
+
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        //600px
+        @media (max-width: 37.5em) {
+            @content;
+        }
+    }
+    @if $breakpoint == tab-port {
+        //900px
+        @media (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-land {
+        //1200px
+        @media (max-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == big-desktop {
+        //1800px
+        @media (max-width: 112.5em) {
+            @content;
+        }
+    }
+}

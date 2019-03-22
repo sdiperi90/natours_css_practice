@@ -1,3 +1,22 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800]   is where our normal styles apply
+1800px + :      Big desktop
+
+
+*/
+/*
+one rem or one em in a media query is always just equal to the font size
+which is coming from the browser, and that's by default 16 pixels
+
+We're going to use ems and not rems, because rems fail to work as intended 
+in some of the browsers.
+
+1em = 16px
+
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -37,6 +56,18 @@
 html {
   /* (10/16=0.625  10 pixels what we want, and 16 pixels is browser default size */
   font-size: 62.5%; }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   /* box-sizing this will be inherited to all elements */
