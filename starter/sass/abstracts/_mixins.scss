@@ -37,6 +37,9 @@ which is coming from the browser, and that's by default 16 pixels
 We're going to use ems and not rems, because rems fail to work as intended 
 in some of the browsers.
 
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
 1em = 16px
 
 */
@@ -64,7 +67,7 @@ in some of the browsers.
 
     @if $breakpoint == big-desktop {
         //1800px
-        @media (max-width: 112.5em) {
+        @media (min-width: 112.5em) {
             @content;
         }
     }

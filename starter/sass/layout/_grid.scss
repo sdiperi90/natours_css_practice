@@ -7,6 +7,15 @@
     // :not is a pseudo class that selects everythimg except last-child element
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     @include clearfix;
@@ -19,6 +28,20 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            // as in smaller screen sizes the columns will no longer be side-by-side
+            // wen need to remove margin
+            @include respond(tab-port) {
+                margin-right: 0;
+                text-decoration: underline;
+                text-decoration: underline;
+            }
+        }
+
+        // to make the column take the whole width at smaller screen sizes
+        @include respond(tab-port) {
+            width: 100% !important;
+            margin-bottom: $gutter-vertical-small;
         }
     }
 
